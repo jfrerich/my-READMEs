@@ -12,7 +12,7 @@ when code auto reformats in vi ... extra spacing..
     cpanm CAM::PDF
 	installs in ~/perl5/lib/perl5/
 
-INSTALLED 
+#### INSTALLED 
     09/03/13 - Date::Calc
     01/17/14 - HTTP::Response
     01/17/14 - LWP::UserAgent
