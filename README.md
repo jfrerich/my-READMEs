@@ -2,7 +2,7 @@
 
     :MarkdownPreview to view in browser
 
-* [Perl](Perl)
+* [Perl](Perl.md)
 * [Zsh](Zsh)
 * [Vim](Vim)
 * [git](git)
