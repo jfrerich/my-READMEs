@@ -90,6 +90,10 @@ _key maps _
 	    <C-n> <C-p> to traverse popup menu
 	    <tab> to insert snippet
 	    <C-j> <C-k> to move through fields
+	    
+    Javascript completion 
+	cd .vim/bundle/YouCompleteMe/third_party/ycmd/third_party/tern_runtime
+	npm install --production
 
 ###### _python-mode/python-mode_
     \r - run python from within vim
@@ -158,6 +162,19 @@ _key maps _
 ###### liuchengxu/space-vim-dark
 ###### vim-syntastic/syntastic
     syntax checker after write of file
+    :SyntasticInfo to view information about version and enabled checkers on
+    current file
+    Debug 
+	:let g:syntastic_debug=3
+	:SyntasticCheck eslint
+	run :mes
+    
+###### Plugin 'prettier/vim-prettier'
+    yarn installed with -- brew install yarn
+    prettier installed with -- yarn global add prettier
+
+###### Plugin 'pangloss/vim-javascript'
+    
 
 " vim-scripts/indentpython.vim
 " Plugin suan/instant-markdown-d
