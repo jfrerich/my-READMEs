@@ -131,6 +131,7 @@ _key maps _
     :MundoToggle
     traverse branches of file history. allows retreiving any edit
     http://vimcasts.org/episodes/undo-branching-and-gundo-vim/
+    changed from gundo, because gundo no longer supports python3
     
 ###### _tagbar_
     :TagBarToggle - show program tags
@@ -144,7 +145,11 @@ _key maps _
 
 ###### _tmhedberg/SimpylFold_
 
+###### _SirVer/ultisnips_
+
 ###### _honza/vim-snippets_
+    snippets for ultisnips
+    
 ###### _perl-support.vim_
 ###### _closetag.vim_
     close the tag with C-_ in command mode
@@ -178,5 +183,6 @@ _key maps _
 
 " vim-scripts/indentpython.vim
 " Plugin suan/instant-markdown-d
+
 " Plugin nvie/vim-flake8
 " PEP8 checking
