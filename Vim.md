@@ -59,6 +59,10 @@
 ###### _iamcco/markdown-preview.vim_
     :MarkdownPreview - open .md file in browser
 
+###### _unimpaired.vim_
+    [b jump to previous buffer
+    ]b jump to next buffer
+
 ###### _vim-scripts/tComment_
     gcc - comment current line
     gc - comment visual selected lines
