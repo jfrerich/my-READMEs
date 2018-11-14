@@ -1,11 +1,41 @@
 # MY VIM CHEATSHEET
 
+### Windows
+
+    <c-w> z close preview window
+
 ### Standard Commands
     gq - format paragraph - autowrap text at 80 characters
-    
+    delete / change commands
+	iw (inner word)
+	iW (inner WORD)
+	
+	diw - delete inner word
+	diw - delete inner WORD
+	dib - delete inner '(' ')' block
+	dab - delete a '(' ')' block
+	diB - delete inner '{' '}' block
+	daB - delete a '{' '}' block
 
 ###### _Navigation_
 
+    <C-a> increment number
+    <C-x> decrement number
+    
+    H,M,L - jump to Top, Middle, Bottom of window
+    
+    Location List Navigation 
+	[l - prev location
+	]l - next location
+	[L - first location
+	]L - last location
+    
+    Buffer list navigation
+	[b - prev buffer
+	]b - next buffer
+	[B - first buffer
+	]B - last buffer
+    
     n - jump to start of next match
     gn - select next match
     gN - select previous match 
@@ -62,6 +92,8 @@
 ###### _unimpaired.vim_
     [b jump to previous buffer
     ]b jump to next buffer
+    [m jump to previous method
+    ]m jump to next method
 
 ###### _vim-scripts/tComment_
     gcc - comment current line
@@ -71,6 +103,8 @@
     cs"' - change surrounding from " to '
     ds"  - delete " surrounding
     S'   - Visual select, surround with '
+    ysiw] - surround current word with [] (no spaces)
+    ysiw[ - surround current word with [  ] (with spaces)
 
 ###### _easymotion/vim-easymotion_
     <leader> is '\' key
@@ -100,8 +134,22 @@ _key maps _
 	npm install --production
 
 ###### _python-mode/python-mode_
+    good video - https://www.youtube.com/watch?v=67OZNp9Z0CQ
+    explanation of rope functions - https://github.com/python-rope/rope/blob/master/docs/overview.rst
+    
     \r - run python from within vim
-    pymode runs rope and takes for ever. using syntastic instead
+    \g - goto definition
+    [[ - got to prev definition 
+    ]] - got to next definition 
+    K - show documentaion
+    
+    Extract method/variable from selected lines.
+	<C-c>rm - visual select first.  Extracts selection and creates new function/method
+	<C-c>rl - visual select first.  Extracts selection and creates new variable
+	
+    <C-c>ro - organize imports
+    <C-c>rr - rename method/function/class/variable under cursor
+    
     got this working and allow <C-S-e> to run script in vim 
     
 ###### _adelarsq/vim-matchit_
@@ -155,8 +203,9 @@ _key maps _
     snippets for ultisnips
     
 ###### _perl-support.vim_
-###### _closetag.vim_
-    close the tag with C-_ in command mode
+
+###### _alvan/vim-closetag.vim_
+    Automatically close HTML tags
     
 ###### _vimwiki/vimwiki_
 
