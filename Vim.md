@@ -5,8 +5,10 @@
     <c-w> z close preview window
 
 ### Standard Commands
-    gq - format paragraph - autowrap text at 80 characters
-    delete / change commands
+
+  gq - format paragraph - autowrap text at 80 characters
+  
+  delete / change commands
 	iw (inner word)
 	iW (inner WORD)
 	
@@ -35,6 +37,7 @@
 	]b - next buffer
 	[B - first buffer
 	]B - last buffer
+  <C-^> or :b# - previous buffer
     
     n - jump to start of next match
     gn - select next match
@@ -116,6 +119,8 @@
 find anything from VIM http://www.youtube.com/watch?v=9XrHk3xjYsw
 
     <C-P> - invoke ctrlP
+    <C-F> - switch to next mode in sequence
+    <C-B> - switch to previous mode in sequence (line mode is default)
 ###### _scrooloose/nerdtree_
     :NERDTree - invoke NERDTree
 
@@ -189,7 +194,7 @@ _key maps _
     :TagBarToggle - show program tags
 
 ###### _tpope/vim-repeat_
-    . - repoeat command for surround.vim and a few others
+    . - repeat command for surround.vim and a few others
     
 ###### _jiangmiao/auto-pairs_
 
