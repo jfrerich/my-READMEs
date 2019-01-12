@@ -237,8 +237,19 @@ _key maps _
     prettier installed with -- yarn global add prettier
 
 ###### Plugin 'pangloss/vim-javascript'
-    
 
+###### Plugin 'airblade/vim-gitgutter'
+    show gutter with git changes
+    
+###### Plugin 'terryma/vim-multiple-cursors'
+    https://github.com/terryma/vim-multiple-cursors/wiki/Keystrokes-for-example-gifs
+    - make visual word selection
+    - <C-n> - select additional words
+    - c, r, i - to perform operation on selection
+    - <Home> - move to beginning of line
+    - <End> - move to end of line
+    - <Up/Down> - move cursors up/down
+ 
 " vim-scripts/indentpython.vim
 " Plugin suan/instant-markdown-d
 
