@@ -144,13 +144,23 @@ _key maps _
     
     \r - run python from within vim
     \g - goto definition
-    [[ - got to prev definition 
-    ]] - got to next definition 
     K - show documentaion
     
+    [[    Jump to prev class or function (normal, visual, operator modes)
+    ]]    Jump to next class or function  (normal, visual, operator modes)
+    [M    Jump to prev class or method (normal, visual, operator modes)
+    ]M    Jump to next class or method (normal, visual, operator modes)
+    aC    Select a class. Ex: vaC, daC, yaC, caC (normal, operator modes)
+    iC    Select inner class. Ex: viC, diC, yiC, ciC (normal, operator modes)
+    aM    Select a function or method. Ex: vaM, daM, yaM, caM (normal, operator modes)
+    iM    Select inner function or method. Ex: viM, diM, yiM, ciM (normal, operator modes)
+    
+    [l    Jump to prev location of error/warning
+    ]l    Jump to next location of error/warning
+    
     Extract method/variable from selected lines.
-	<C-c>rm - visual select first.  Extracts selection and creates new function/method
-	<C-c>rl - visual select first.  Extracts selection and creates new variable
+    <C-c>rm - visual select first.  Extracts selection and creates new function/method
+    <C-c>rl - visual select first.  Extracts selection and creates new variable
 	
     <C-c>ro - organize imports
     <C-c>rr - rename method/function/class/variable under cursor
