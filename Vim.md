@@ -13,7 +13,7 @@
 	iW (inner WORD)
 	
 	diw - delete inner word
-	diw - delete inner WORD
+	diW - delete inner WORD
 	dib - delete inner '(' ')' block
 	dab - delete a '(' ')' block
 	diB - delete inner '{' '}' block
@@ -21,22 +21,23 @@
 
 ###### _Navigation_
 
-    <C-a> increment number
-    <C-x> decrement number
+
+    <C-o>, <C-i> - go through jump locations
+    <C-a>, <C-x> - increment/decrement number
     
     H,M,L - jump to Top, Middle, Bottom of window
     
+    Jump to errors in quickfix list (using unimpaired.vim)
+  [q, ]q - :cnext, cprevious (mappings from unimpaired.vim)
+  <leader>a :cclose
+
     Location List Navigation 
-	[l - prev location
-	]l - next location
-	[L - first location
-	]L - last location
+	[l, ]l - prev, next location
+	[L, ]L - first, last location
     
     Buffer list navigation
-	[b - prev buffer
-	]b - next buffer
-	[B - first buffer
-	]B - last buffer
+	[b, ]b - prev, next buffer
+	[B, ]B - first, last buffer
   <C-^> or :b# - previous buffer
     
     n - jump to start of next match
@@ -93,10 +94,8 @@
     :MarkdownPreview - open .md file in browser
 
 ###### _unimpaired.vim_
-    [b jump to previous buffer
-    ]b jump to next buffer
-    [m jump to previous method
-    ]m jump to next method
+    [b, ]b jump to previous, next buffer
+    [m, ]m jump to previous, next method
 
 ###### _vim-scripts/tComment_
     gcc - comment current line
@@ -146,17 +145,14 @@ _key maps _
     \g - goto definition
     K - show documentaion
     
-    [[    Jump to prev class or function (normal, visual, operator modes)
-    ]]    Jump to next class or function  (normal, visual, operator modes)
-    [M    Jump to prev class or method (normal, visual, operator modes)
-    ]M    Jump to next class or method (normal, visual, operator modes)
+    [[, ]] - Jump to prev, next class or function (normal, visual, operator modes)
+    [M, ]M - Jump to prev, next class or method (normal, visual, operator modes)
     aC    Select a class. Ex: vaC, daC, yaC, caC (normal, operator modes)
     iC    Select inner class. Ex: viC, diC, yiC, ciC (normal, operator modes)
     aM    Select a function or method. Ex: vaM, daM, yaM, caM (normal, operator modes)
     iM    Select inner function or method. Ex: viM, diM, yiM, ciM (normal, operator modes)
     
-    [l    Jump to prev location of error/warning
-    ]l    Jump to next location of error/warning
+    [l, ]l - Jump to prev, next location of error/warning
     
     Extract method/variable from selected lines.
     <C-c>rm - visual select first.  Extracts selection and creates new function/method
