@@ -166,6 +166,231 @@ _key maps _
     <C-c>rr - rename method/function/class/variable under cursor
     
     got this working and allow <C-S-e> to run script in vim 
+
+###### _fatih/vim-go_
+
+  SHORTCUTS (Explained in detail in next sections)
+    gd - goto function definition
+      <C-t> go back to last location before gd command
+    
+    Text Objects
+      af, if  ->  'a function', 'inner function'
+      ac, ic  ->  'a comment', 'inner comment'
+      
+      works with d, c, v, y
+      
+      Ex. dif, cic
+      
+    (Unimpaired mappings)
+      ]], [[ - jump to next, previous function or method
+               These can be used with d, v prefixes
+      [q, ]q  for :cnext, cprevious (mappings from unimpaired.vim)
+    
+    K - Get documentation for function under cursor
+    \b - :GoBuild
+    \r - :GoRun
+    \t - :GoTest
+    \c - :GoCoverageToggle
+    
+    Snippets
+      errp -> panic if err ! nil
+      errn -> return if err ! nil
+      fn -> fmt.Println()
+      ff -> fmt.Printf()
+      ln -> log.Println()
+      lf -> log.Printf()
+      
+      ff / lf dynamically copys the variable name into the format string!!!
+      
+      :  -> v:= value
+      
+      anon ->  fn := func() {
+            
+               }
+	    ap ->  append(slice, value)
+      ap= ->  slice = append(slice, value)
+      br  ->  break
+      interface  ->
+      if  -> 
+      else  -> 
+      json  ->  json field tag
+      yaml  ->  yaml field tag
+      for  ->  for loop
+      fori  ->  for integer loop
+      forr  ->  for range loop
+      
+      ff  ->  Printf debug
+      fn  ->  Println debug
+      
+      meth  ->   method
+      
+      test  ->  test function
+      tt  ->  test table 
+      
+      var  ->  variable declaration
+      vars  ->  variables declaration
+      select  ->  select channel
+      switch  ->  switch, case
+      rt  ->  return
+      
+      
+      
+    :A, :AV, :AS - :GoAlternate - alternate to and from <file>.go and <file>_test.go 
+      
+    Move Between Functions (Uses Ctrl-P)
+      :GoDecls opens the current file and lists all available function declarations
+      :GoDeclsDir is the same as :GoDecls, the only difference is it parses all Go files under the current directory
+      
+    :GoReferrers -> find references to the selected identifier, scanning all
+                    packages in the workspace. Result is location list
+    :GoDescribe -> Like :GoInfo, but give more info 
+                    - show methdod set of a type, declarations of a package
+    :GoImplements -> find the interface a type implements (shows location list)
+      
+    Refactor It
+      :GoRename -> search all packages under GOPATH and renames all identifiers
+                   that depend on the identifier
+      :GoFreevars (visual select code) -> result is quickfix list of all
+          variables that are free variables  
+          - used to determine complexity of a piece of code.  See how many
+            variables depend on this code
+      
+    Delve Debugger   
+    
+      :GoDebugStart [pkg] [program-args]  (Ex :GoDebugStart ./hello)
+      :GoDebugStop  -> close all windows after stop
+      :GoDebugRestart  -> recompile code
+      :GoDebugTest [pkg] [program-args]
+          Use `-test.flag` to pass flags to `go test` when debugging a test; for
+          example `-test.v` or `-test.run TestFoo`
+      
+      :GoDebugStepOut - Run all code in the current function and halt ("step out")
+      :GoDebugSet {var} {value} -> set the variable to value. 
+                                   Cannot be string. limitation of delve
+      
+      <F5> - continue until next breakpoint
+      <F9> - add breakpoint
+      <F10> - run to the next line
+      <F11> - step into 
+      
+      NOTE : <F10> will literally go to the line active cursor in file!
+    
+    
+    vim-go Tutorial https://github.com/fatih/vim-go-tutorial
+    :GoRun %  - go run on current file
+    :GoRun - go run on while package
+    :GoBuild - compile file instead of running it
+    :GoTest - run go test on file 
+    :GoTestFunc - test only function under cursor
+    :GoTestCompile - test compile without problems
+    :GoCoverage - `go test -coverprofile tempfile`
+    :GoCoverageClear - clear coverage
+    :GoCoverageToggle - toggle between GoCoverage and GoCoverageToggle
+    :GoImport <package> - add package to import statement (supports tab completion)
+    :GoImportAs <name> <package> - add package with package name (ex. str strings)
+    :GoDrop <package> - remove package from imports 
+    :GoCallers 
+        Show "callees" relation for a selected package. A list of possible call
+        targets for the type under the cursor (or selected package) is shown in a
+        location list.
+    :GoCallers
+        Show "callers" relation for a selected function. A list of possible
+        callers for the selected function under the cursor is shown in a location
+        list.
+    
+    Text Objects
+      dif, cif, vif, yif - detete, change, visual select, yank 'INNER FUNCTION'
+      daf, caf, vaf, yaf - detete, change, visual select, yank 'A FUNCTION'
+      
+    Struct Split and Join
+      gS - Split struct expression into multiple lines
+      gJ - Join struct expression into single line
+  
+    Snippets
+      errp -> panic if err ! nil
+      fn -> fmt.Println()
+      ff -> fmt.Printf()
+      ln -> log.Println()
+      lf -> log.Printf()
+      
+      ff / lf dynamically copys the variable name into the format string!!!
+      
+      Add field tags
+        
+        Place cursor at end of Message or ServerName lines.
+        In insert mode, type json and hit tab.. !
+      
+        Convert ...
+        
+          type foo struct {
+            Message    string
+            Ports      []int
+            ServerName string
+          }
+        
+        To ...
+        
+          type foo struct {
+            Message    string `json:"message"`
+            Ports      []int
+            ServerName string `json:"server_name"`
+          }
+          
+    Navigation
+      Alternate Files
+        :GoAlternate - alternate between test and not-test file
+        
+      Go to Definition 
+        gd -> :GoDef jump to definition, locally or globally
+        <C-t> -> jump back to previous location
+      
+      Move Between Functions (Uses Ctrl-P)
+      
+        :GoDecls opens the current file and lists all available function declarations
+        :GoDeclsDir is the same as :GoDecls, the only difference is it parses all Go files under the current directory
+        
+        These can be used with d, v prefixes
+        ]] - jump to next function or method
+        [[ - jump to previous function or method 
+        
+        
+    Understand It
+    
+      Documentation Lookup 
+        K - Get documentation for function under cursor (:GoDoc)
+        
+      Identifier Resolution (what is a function accepting or returning)
+        <leader>i -> :GoInfo 
+        The following shows identifier informatino whenever move cursor
+          let g:go_auto_type_info = 1
+          set updatetime=100   -> set update frequency
+          
+      Identifier Highlighting
+        :GoSameIds -> highlight all variables under cursor, across file
+        :GoSameIdsClear -> clear highlights
+        let g:go_auto_sameids = 1   -> always highlight when move cursor
+        
+    Guru (editor tool for navigating and understanding Go code)
+      
+      :GoReferrers -> find references to the selected identifier, scanning all
+                      packages in the workspace. Result is location list
+      :GoDescribe -> Like :GoInfo, but give more info 
+                      - show methdod set of a type, declarations of a package
+      :GoImplements -> find the interface a type implements (shows location list)
+      
+    Refactor It
+      :GoRename -> search all packages under GOPATH and renames all identifiers
+                   that depend on the identifier
+      :GoFreevars (visual select code) -> result is quickfix list of all
+          variables that are free variables  
+          - used to determine complexity of a piece of code.  See how many
+            variables depend on this code
+      
+      
+        
+      
+          
+      
     
 ###### _adelarsq/vim-matchit_
     use % to go to matching <tag>
