@@ -117,9 +117,16 @@
 ###### _kien/ctrlp.vim (fuzzy finder)_
 find anything from VIM http://www.youtube.com/watch?v=9XrHk3xjYsw
 
+  Once CtrlP is open:
+    <F5> - purge cache for current dir to get new files, remove deleted files and apply new ignore
+    <C-d> - switch to filename search instead of full path
     <C-P> - invoke ctrlP
-    <C-F> - switch to next mode in sequence
-    <C-B> - switch to previous mode in sequence (line mode is default)
+    <C-F> <C-B> - switch to next, previous mode in sequence
+    <C-v> <C-x> - open in Vertical or Horizontal split
+    <C-j> <C-k> - navigate the result list
+    <C-n> <C-p> - select next/previous string in prompt history
+    <C-z> - mark/unmark multiple files. <C-o> to open files
+    
 ###### _scrooloose/nerdtree_
     :NERDTree - invoke NERDTree
 
@@ -413,6 +420,7 @@ _key maps _
 	dp    |:Git| add --intent-to-add (untracked files)
 	q     close status
 	r     reload status
+	P     patch 
     :Gwrite
 
 ###### _simnalamburt/mundo.vim_
