@@ -280,44 +280,164 @@ https://www.diycode.cc/projects/fatih/vim-go
     
 ###### _Snippets_
     
-    errp -> panic if err ! nil
-    errn -> return if err ! nil
+    # print
+      fn -> fmt.Println()
+      ff -> fmt.Printf()   // dynamically copys the variable name into the format string
+      ln -> log.Println()
+      lf -> log.Printf()   // dynamically copys the variable name into the format string
     
-    fn -> fmt.Println()
-    ff -> fmt.Printf()   // dynamically copys the variable name into the format string
-    ln -> log.Println()
-    lf -> log.Printf()   // dynamically copys the variable name into the format string
+    # variables
+      :    ->  (shorthand variable declaration)      ->   v:= value
+      var  ->  (variable declaration)
+      vars ->  (variables declaration)
     
-    :  -> v:= value
-    var  ->  variable declaration
-    vars  ->  variables declaration
+    # for
+      for  ->  (for loop)
+      
+      fori ->  (for integer loop)  ->  for i := 0; i < N; i++ {
+                                       }
+                                       
+      forr ->  (for range loop)  ->  for k, v := range  {
+                                     }
     
-    anon ->  fn := func() {
-             }
-             
-    ap ->  append(slice, value)
-    ap= ->  slice = append(slice, value)
-    br  ->  break
-    interface  ->
-    if  -> 
-    else  -> 
-    json  ->  add json field tag
-    yaml  ->  add yaml field tag
-    for  ->  for loop
-    fori  ->  for integer loop
-    forr  ->  for range loop
+    # if, else
+      if   
+      ife  ->  (if with inline err)
+      else, el  
+      
+    # field tags
+      json  ->  (add json field tag)
+      yaml  ->  (add yaml field tag)
     
-    ff  ->  Printf debug
-    fn  ->  Println debug
+    # interfaces
+      in -> (interface)  ->  interface{}
+      
+      inf -> (full interface)  ->  interface name { 
+                                        /* methods */ 
+                                   }
+                                   
+      interface -> (interface I)  ->  type Interface interface {
+                                        /* TODO: add methods */
+                                      }
+                
+    # function
+      fun  -> (function)  ->  func funcName() error {
+                              }
+                              
+      fum  -> (method)  ->  func (receiver type) funcName() error {
+                            }
+                            
+      func ->             ->  func name(params) {
+                              }
+                              
+      fumh -> (http handler function on receiver)
+                                   ->  func (receiver type) funcName(w http.ResponseWriter, r *http.Request) {
+                                       }
+                                       
+      funch -> (HTTP handler)  ->  func handler(w http.ResponseWriter, r *http.Request) {
+                                   }
+      
+    # function as method
+        meth -> (method)  ->  func (receiver type) name(params) {
+                              }
     
-    meth  ->   method
+    # anonymous function 
+      anon -> (anonymous function)  ->  fn := func() {
+                                        }
     
-    test  ->  test function
-    tt  ->  test table 
+    # Errors
     
-    select  ->  select channel
-    switch  ->  switch, case
-    rt  ->  return
+      err  ->  (Basic error handling)  ->  if err != nil {
+                                             log.Fatal(err)
+                                           }
+    
+      errn  ->  (Error return)  ->  if err != nil {
+                                      return err
+                                    }
+                                          
+      errn, -> (Error multiple return)  ->  if err != nil {
+                                               return nil, err
+                                            }
+    
+      errp -> (Error panic)  -> if err != nil {
+                                  panic()
+                                }
+                                             
+                                             
+      errt -> (Error test fatal)  -> if err != nil {
+                                       t.Fatal(err)
+                                     }
+
+    # maps
+      make  ->                    ->  make([]string, 0)
+      map   ->   (map[Type]Type)  ->  map[string]int
+
+    # single words
+      rt  ->  return
+      br  ->  break
+      ft  ->  fallthrough
+      cn  ->  continue
+    
+    # Slices
+      ap    -> (append)             ->  append(slice, value)
+      ap=   -> (append assignment)  ->  slice = append(slice, value)
+
+
+    # Struct
+      struct -> (struct)  ->  type Struct struct {
+                              }
+                                    
+    # go routines
+      go    -> (goroutine named function)      ->  go funcName()
+      
+      gof   -> (goroutine anonymous function)  ->  go func() {
+                                                   }()
+    
+    # channels
+      ch  -> chan type 
+    
+      select  ->  select channel  ->  select {
+                                      case v1 := <-chan1
+                                      }
+                                             
+    # switch
+      sw  ->  switch var {
+              case value1:
+                
+              case value2:
+                
+              default:
+                
+              }
+      
+      switch ->  switch var {
+                 case value1:
+                 
+                 }
+    
+    # Testing
+      test  ->  (test function)  ->  func TestFunction(t *testing.T) {
+                                     }
+                                      
+      tt  ->  (test table)  ->  var tests = []struct {
+                                  name string
+                                  expected string
+                                  given string
+                                }{
+                                  {"", "", "",},
+                                }
+                                for _, tt := range tests {
+                                  tt := tt
+                                  t.Run(tt.name, func(t *testing.T){
+                                    actual := (tt.given)
+                                    if actual != tt.expected {
+                                        t.Errorf("(%s): expected %s, actual %s", tt.given, tt.expected, actual)
+                                    }
+
+                                  })
+                                }
+    
+    
       
 ###### _Move Between Functions (Uses Ctrl-P)_
     
