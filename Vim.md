@@ -232,29 +232,48 @@ Also uses ultisnips http://www.alexeyshmalko.com/2014/youcompleteme-ultimate-aut
     got this working and allow <C-S-e> to run script in vim 
 
 ##### _fatih/vim-go_
+https://www.diycode.cc/projects/fatih/vim-go
 ###### _Shortcuts_
+
+    # quickfix navigations
+      [q, ]q  for :cnext, cprevious (mappings from unimpaired.vim)
+    
+    # function navigation
+      ]], [[ - jump to next, previous function or method (can be used with d, v prefixes)
       
-    Go to Definition 
+    # Go to Definition 
       gd -> :GoDef jump to definition, locally or globally
       <C-t> -> jump back to previous location
       
-    K - Get documentation for function under cursor (:GoDoc)
+      <C-o> -> 
+      <C-i> -> 
+      
+      \ds - <Plug>(go-def-split)
+      \dv - <Plug>(go-def-vertical)
+
+    # Go Doc
+      K, \gd - Get documentation for function under cursor (:GoDoc)
+      \gv - <Plug>(go-doc-vertical)
+
+    # Go Implements - interfaces
+      \s - <Plug>(go-implements) Show a list of interfaces implemented by the type under your cursor
     
-    \b - :GoBuild
-    \r - :GoRun
-    \t - :GoTest
-    \c - :GoCoverageToggle
+    # Go Rename - refactoring
+      \e - <Plug>(go-rename) - Rename the identifier under the cursor to a new name
     
-    :A, :AV, :AS - :GoAlternate - alternate between <file>.go and <file>_test.go 
+    # Commands
+      \b - :GoBuild
+      \r - :GoRun
+      \t - :GoTest
+      \c - :GoCoverageToggle
     
-    ]], [[ - jump to next, previous function or method (can be used with d, v prefixes)
-    [q, ]q  for :cnext, cprevious (mappings from unimpaired.vim)
+      :A, :AV, :AS - :GoAlternate - alternate between <file>.go and <file>_test.go 
     
-    Text Objects
+    # Text Objects
       dif, cif, vif, yif - detete, change, visual select, yank 'INNER FUNCTION'
       daf, caf, vaf, yaf - detete, change, visual select, yank 'A FUNCTION'
       
-    Struct Split and Join
+    # Struct Split and Join
       gS - Split struct expression into multiple lines
       gJ - Join struct expression into single line
   
@@ -302,61 +321,18 @@ Also uses ultisnips http://www.alexeyshmalko.com/2014/youcompleteme-ultimate-aut
       
 ###### _Move Between Functions (Uses Ctrl-P)_
     
-    Guru (editor tool for navigating and understanding Go code)
-    
-      :GoDecls opens the current file and lists all available function declarations
-      :GoDeclsDir is the same as :GoDecls, the only difference is it parses all Go files under the current directory
+    :GoDecls opens the current file and lists all available function declarations
+    :GoDeclsDir is the same as :GoDecls, the only difference is it parses all Go files under the current directory
+
+###### _Guru (editor tool for navigating and understanding Go code)_
+
         
-      :GoReferrers -> find references to the selected identifier, scanning all
-                      packages in the workspace. Result is location list
-      :GoDescribe -> Like :GoInfo, but give more info 
-                     show methdod set of a type, declarations of a package
-      :GoImplements -> find the interface a type implements (shows location list)
-      
-      
-###### _Refactor It_
-    
-      :GoRename -> search all packages under GOPATH and renames all identifiers
-                   that depend on the identifier
-      :GoFreevars (visual select code) -> result is quickfix list of all
-          variables that are free variables  
-          - used to determine complexity of a piece of code.  See how many
-            variables depend on this code
-      
-###### _Delve Debugger_
-    
-      :GoDebugStart [pkg] [program-args]  (Ex :GoDebugStart ./hello)
-      :GoDebugStop  -> close all windows after stop
-      :GoDebugRestart  -> recompile code
-      :GoDebugTest [pkg] [program-args]  (same as :GoDebugStart, but debugs *_test.go file)
-          Use `-test.flag` to pass flags to `go test` when debugging a test; for
-          example `-test.v` or `-test.run TestFoo`
-      :GoDebugPrint {expr} (Ex. :GoDebugPrint truth == 42)
-      :GoDebugStepOut - Run all code in the current function and halt ("step out")
-      :GoDebugSet {var} {value} -> set the variable to value. 
-                                   Cannot be string. limitation of delve
-      
-      <F5> - continue until next breakpoint (:GoDebugContinue)
-      <F6> - evaluate the <cword> under the cursor (:GoDebugPrint) 
-      <F9> - add breakpoint (:GoDebugBreakpoint)
-      <F10> - run to the next line. (:GoDebugNext) Will literally go to the line with active cursor in file!
-      <F11> - step into (:GoDebugStep)
-      
-###### _vim-go Tutorial_
-https://github.com/fatih/vim-go-tutorial
-    
-    :GoRun %  - go run on current file
-    :GoRun - go run on whole package
-    :GoBuild - compile file instead of running it
-    :GoTest - run go test on file 
-    :GoTestFunc - test only function under cursor
-    :GoTestCompile - test compile without problems
-    :GoCoverage - `go test -coverprofile tempfile`
-    :GoCoverageClear - clear coverage
-    :GoCoverageToggle - toggle between GoCoverage and GoCoverageToggle
-    :GoImport <package> - add package to import statement (supports tab completion)
-    :GoImportAs <name> <package> - add package with package name (ex. str strings)
-    :GoDrop <package> - remove package from imports 
+    :GoReferrers -> find references to the selected identifier, scanning all
+                    packages in the workspace. Result is location list
+    :GoDescribe -> Like :GoInfo, but give more info 
+                   show methdod set of a type, declarations of a package
+    :GoImplements -> find the interface a type implements (shows location list)
+  
     :GoCallers 
         Show "callees" relation for a selected package. A list of possible call
         targets for the type under the cursor (or selected package) is shown in a
@@ -366,41 +342,96 @@ https://github.com/fatih/vim-go-tutorial
         callers for the selected function under the cursor is shown in a location
         list.
       
+      
+###### _Refactor It_
+    
+    :GoRename -> search all packages under GOPATH and renames all identifiers
+                 that depend on the identifier
+    :GoFreevars (visual select code) -> result is quickfix list of all
+        variables that are free variables  
+        - used to determine complexity of a piece of code.  See how many
+          variables depend on this code
+      
+###### _Delve Debugger_
+    
+    :GoDebugStart [pkg] [program-args]  (Ex :GoDebugStart ./hello)
+    :GoDebugStop  -> close all windows after stop
+    :GoDebugRestart  -> recompile code
+    :GoDebugTest [pkg] [program-args]  (same as :GoDebugStart, but debugs *_test.go file)
+        Use `-test.flag` to pass flags to `go test` when debugging a test; for
+        example `-test.v` or `-test.run TestFoo`
+    :GoDebugPrint {expr} (Ex. :GoDebugPrint truth == 42)
+    :GoDebugStepOut - Run all code in the current function and halt ("step out")
+    :GoDebugSet {var} {value} -> set the variable to value. 
+                                 Cannot be string. limitation of delve
+    
+    <F5> - continue until next breakpoint (:GoDebugContinue)
+    <F6> - evaluate the <cword> under the cursor (:GoDebugPrint) 
+    <F9> - add breakpoint (:GoDebugBreakpoint)
+    <F10> - run to the next line. (:GoDebugNext) Will literally go to the line with active cursor in file!
+    <F11> - step into (:GoDebugStep)
+      
+      
+###### _Go Test_
+    
+    :GoTest - run go test on file 
+    :GoTestFunc - test only function under cursor
+    :GoTestCompile - test compile without problems
+      
+###### _Go Coverage_
+    
+    :GoCoverage - `go test -coverprofile tempfile`
+    :GoCoverageClear - clear coverage
+    :GoCoverageToggle - toggle between GoCoverage and GoCoverageToggle
+      
+###### _Go Imports_
+    
+    :GoImport <package> - add package to import statement (supports tab completion)
+    :GoImportAs <name> <package> - add package with package name (ex. str strings)
+    :GoDrop <package> - remove package from imports 
+    
+###### _vim-go Tutorial_
+https://github.com/fatih/vim-go-tutorial
+    
+    :GoRun %  - go run on current file
+    :GoRun - go run on whole package
+    :GoBuild - compile file instead of running it
+      
 ###### _Add field tags (json snippet)_
         
-        Place cursor at end of Message or ServerName lines.
-        In insert mode, type json and hit tab.. !
-      
-        Convert ...
-        
-          type foo struct {
-            Message    string
-            Ports      []int
-            ServerName string
-          }
-        
-        to ...
-        
-          type foo struct {
-            Message    string `json:"message"`
-            Ports      []int
-            ServerName string `json:"server_name"`
-          }
+    Place cursor at end of Message or ServerName lines.
+    In insert mode, type json and hit tab.. !
+  
+    Convert ...
+    
+      type foo struct {
+        Message    string
+        Ports      []int
+        ServerName string
+      }
+    
+    to ...
+    
+      type foo struct {
+        Message    string `json:"message"`
+        Ports      []int
+        ServerName string `json:"server_name"`
+      }
         
 ###### _Understand It (setup with auto g: commands in .vimrc so don't have to use shortcut to use)_
     
-      Identifier Resolution (what is a function accepting or returning)
-      
-        <leader>i -> :GoInfo 
-        The following shows identifier informatino whenever move cursor
-          let g:go_auto_type_info = 1
-          set updatetime=100   -> set update frequency
-          
-      Identifier Highlighting
-      
-        :GoSameIds -> highlight all variables under cursor, across file
-        :GoSameIdsClear -> clear highlights
-        let g:go_auto_sameids = 1   -> always highlight when move cursor
+    Identifier Resolution (what is a function accepting or returning)
+    
+      <leader>i -> :GoInfo 
+      The following shows identifier informatino whenever move cursor
+        let g:go_auto_type_info = 1
+        set updatetime=100   -> set update frequency
+        
+    Identifier Highlighting
+    
+      :GoSameIds -> highlight all variables under cursor, across file
+      :GoSameIdsClear -> clear highlights
+      let g:go_auto_sameids = 1   -> always highlight when move cursor
         
       
 ##### _adelarsq/vim-matchit_
