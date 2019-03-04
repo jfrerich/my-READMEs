@@ -280,44 +280,44 @@ https://www.diycode.cc/projects/fatih/vim-go
     
 ###### _Snippets_
     
-      errp -> panic if err ! nil
-      errn -> return if err ! nil
-      
-      fn -> fmt.Println()
-      ff -> fmt.Printf()   // dynamically copys the variable name into the format string
-      ln -> log.Println()
-      lf -> log.Printf()   // dynamically copys the variable name into the format string
-      
-      :  -> v:= value
-      var  ->  variable declaration
-      vars  ->  variables declaration
-      
-      anon ->  fn := func() {
-               }
-               
-      ap ->  append(slice, value)
-      ap= ->  slice = append(slice, value)
-      br  ->  break
-      interface  ->
-      if  -> 
-      else  -> 
-      json  ->  add json field tag
-      yaml  ->  add yaml field tag
-      for  ->  for loop
-      fori  ->  for integer loop
-      forr  ->  for range loop
-      
-      ff  ->  Printf debug
-      fn  ->  Println debug
-      
-      meth  ->   method
-      
-      test  ->  test function
-      tt  ->  test table 
-      
-      select  ->  select channel
-      switch  ->  switch, case
-      rt  ->  return
+    errp -> panic if err ! nil
+    errn -> return if err ! nil
+    
+    fn -> fmt.Println()
+    ff -> fmt.Printf()   // dynamically copys the variable name into the format string
+    ln -> log.Println()
+    lf -> log.Printf()   // dynamically copys the variable name into the format string
+    
+    :  -> v:= value
+    var  ->  variable declaration
+    vars  ->  variables declaration
+    
+    anon ->  fn := func() {
+             }
+             
+    ap ->  append(slice, value)
+    ap= ->  slice = append(slice, value)
+    br  ->  break
+    interface  ->
+    if  -> 
+    else  -> 
+    json  ->  add json field tag
+    yaml  ->  add yaml field tag
+    for  ->  for loop
+    fori  ->  for integer loop
+    forr  ->  for range loop
+    
+    ff  ->  Printf debug
+    fn  ->  Println debug
+    
+    meth  ->   method
+    
+    test  ->  test function
+    tt  ->  test table 
+    
+    select  ->  select channel
+    switch  ->  switch, case
+    rt  ->  return
       
 ###### _Move Between Functions (Uses Ctrl-P)_
     
