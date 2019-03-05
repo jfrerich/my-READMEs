@@ -263,7 +263,8 @@ https://www.diycode.cc/projects/fatih/vim-go
     
     # Commands
       \b - :GoBuild
-      \r - :GoRun
+      \r - :GoRun  -  go run on whole package
+      \R - :GoRun %  - go run on current file (map added to .vimrc)
       \t - :GoTest
       \c - :GoCoverageToggle
     
@@ -437,15 +438,12 @@ https://www.diycode.cc/projects/fatih/vim-go
                                   })
                                 }
     
-    
-      
 ###### _Move Between Functions (Uses Ctrl-P)_
     
     :GoDecls opens the current file and lists all available function declarations
     :GoDeclsDir is the same as :GoDecls, the only difference is it parses all Go files under the current directory
 
 ###### _Guru (editor tool for navigating and understanding Go code)_
-
         
     :GoReferrers -> find references to the selected identifier, scanning all
                     packages in the workspace. Result is location list
@@ -461,7 +459,6 @@ https://www.diycode.cc/projects/fatih/vim-go
         Show "callers" relation for a selected function. A list of possible
         callers for the selected function under the cursor is shown in a location
         list.
-      
       
 ###### _Refactor It_
     
@@ -479,18 +476,18 @@ https://www.diycode.cc/projects/fatih/vim-go
     :GoDebugRestart  -> recompile code
     :GoDebugTest [pkg] [program-args]  (same as :GoDebugStart, but debugs *_test.go file)
         Use `-test.flag` to pass flags to `go test` when debugging a test; for
-        example `-test.v` or `-test.run TestFoo`
+        example `-test.v` or `-test.run TestFoo` (:GoDebugTest ./app -test.run TestStartServerSuccess)
     :GoDebugPrint {expr} (Ex. :GoDebugPrint truth == 42)
     :GoDebugStepOut - Run all code in the current function and halt ("step out")
     :GoDebugSet {var} {value} -> set the variable to value. 
                                  Cannot be string. limitation of delve
     
-    <F5> - continue until next breakpoint (:GoDebugContinue)
+    <F5> - next breakpoint (:GoDebugContinue)
     <F6> - evaluate the <cword> under the cursor (:GoDebugPrint) 
     <F9> - add breakpoint (:GoDebugBreakpoint)
-    <F10> - run to the next line. (:GoDebugNext) Will literally go to the line with active cursor in file!
+    <F10> - next line (:GoDebugNext) Will literally go to the line with active cursor in file!
     <F11> - step into (:GoDebugStep)
-      
+    <S-F11> - step out (:GoDebugStepOut)  Mapped in .vimrc
       
 ###### _Go Test_
     
