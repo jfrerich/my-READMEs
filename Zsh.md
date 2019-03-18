@@ -35,6 +35,8 @@
     
     d - list dirs
     cd -3 cd to 3rd dir in list
+    gd - git diff file(s) and show in terminal
+    gdt - git difftool file(s) and show in external vimdiff window
 
 ##### INSTALLING
 
