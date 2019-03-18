@@ -45,16 +45,21 @@
 
 ###### _Navigation_
 
-    Jump to.. 
-      H,M,L - Top, Middle, Bottom of window
-    
     Move cursor..
-      <S-H> <S-M> <S-L> - top, middle, bottom of page
+      H, M, L - Top, Middle, Bottom of Screen 
       5k - up 5 rows
       5j - down 5 rows
       
     Scroll current Line to..
       zt,zz,zb - top, middle, bottom of window
+    
+    Move screen.. 
+      <C-y> - up one line
+      <C-e> - down one line
+      
+    Move cursor and screen.. 
+      <C-u> - up 1/2 page
+      <C-d> - down 1/2 page
     
     Split Window Navigation
     
@@ -65,7 +70,6 @@
     
     Go Through Jump Locations 
       <C-o>, <C-i>
-      
       
 ###### _Quickfix and Location Windows_
     (Using unimpaired.vim)
@@ -245,9 +249,6 @@ https://www.diycode.cc/projects/fatih/vim-go
       gd -> :GoDef jump to definition, locally or globally
       <C-t> -> jump back to previous location
       
-      <C-o> -> 
-      <C-i> -> 
-      
       \ds - <Plug>(go-def-split)
       \dv - <Plug>(go-def-vertical)
 
@@ -269,6 +270,10 @@ https://www.diycode.cc/projects/fatih/vim-go
       \c - :GoCoverageToggle
     
       :A, :AV, :AS - :GoAlternate - alternate between <file>.go and <file>_test.go 
+    
+    # Go Declarations
+      <C-g> :GoDecls
+      \dr :GoDeclsDir
     
     # Text Objects
       dif, cif, vif, yif - detete, change, visual select, yank 'INNER FUNCTION'
@@ -489,6 +494,11 @@ https://www.diycode.cc/projects/fatih/vim-go
     <F11> - step into (:GoDebugStep)
     <S-F11> - step out (:GoDebugStepOut)  Mapped in .vimrc
       
+###### _GODEBUG_OUTPUT Window_
+
+    Struct values displayed as {...}
+    array/slices as [4] -> <CR> on the variable name to expand values
+      
 ###### _Go Test_
     
     :GoTest - run go test on file 
@@ -596,6 +606,7 @@ https://github.com/fatih/vim-go-tutorial
 ##### vim-airline/vim-airline
     powerline status bar
     theme for info bar at bottom. https://github.com/vim-airline/vim-airline/wiki/Screenshots
+    tabline extension shows active buffers at top of screen
     
 ##### liuchengxu/space-vim-dark
 
