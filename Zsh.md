@@ -12,6 +12,7 @@
 
 ##### COMMANDS 
 
+
     ls -l **/*.py - recursive ls
     
     path replacement
@@ -35,8 +36,24 @@
     
     d - list dirs
     cd -3 cd to 3rd dir in list
+
+#### aliases 
+
+##### git
+    
+####### git most commonly used
+    gaa='git add --all' 
     gd - git diff file(s) and show in terminal
     gdt - git difftool file(s) and show in external vimdiff window
+    gcmsg='git commit -m'
+    gco='git checkout'
+    gcount='git shortlog -sn'
+    glod='git log --graph --pretty='\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset'\'
+    
+    gb='git branch'
+    gcb='git checkout -b'
+    gcm='git checkout master'
+  
 
 ##### INSTALLING
 

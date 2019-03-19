@@ -8,6 +8,13 @@
 
     gq - format paragraph - autowrap text at 80 characters
     
+### vimdiff Commands
+
+  ]c, [c  - next/previous difference
+  do - diff obtain
+  dp - diff put
+  :diffupdate - update diff if updates look messed up
+ 
     
 ###### _Word Search / Modification_
     n, N - repeat next, previous "/" or "?"
