@@ -183,6 +183,13 @@ https://github.com/terryma/vim-multiple-cursors/wiki/Keystrokes-for-example-gifs
     <leader>s{char} - highlight {char} in file
     <leader>j{char} - Line motion - highlight lines below
     <leader>k{char} - Line motion - highlight lines above
+    
+##### _junegunn/fzf.vim (fuzzy finder)_
+    ; - :Buffers 
+    <leader><space> - :Files
+    <leader>/ - search with 'Ag'
+    :Commits - git commits
+    :BCommits - git commits for current buffer
 
 ##### _kien/ctrlp.vim (fuzzy finder)_
   Find anything from VIM http://www.youtube.com/watch?v=9XrHk3xjYsw
