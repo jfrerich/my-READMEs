@@ -190,6 +190,9 @@ https://github.com/terryma/vim-multiple-cursors/wiki/Keystrokes-for-example-gifs
     <leader>/ - search with 'Ag'
     :Commits - git commits
     :BCommits - git commits for current buffer
+    :Ag - loads all files and file contents for searching
+    
+    start search with ' to find exact match, not fuzzy find
 
 ##### _kien/ctrlp.vim (fuzzy finder)_
   Find anything from VIM http://www.youtube.com/watch?v=9XrHk3xjYsw
