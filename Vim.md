@@ -1,82 +1,94 @@
 # MY VIM CHEATSHEET
 
 ### Windows
-
-    <c-w> z close preview window
+|         |                      |
+| -       | -                    |
+| <c-w&gt; z | close preview window |
 
 ### Standard Commands
-
-    gq - format paragraph - autowrap text at 80 characters
+|    |                                                   |
+| -  | -                                                 |
+| gq | format paragraph - autowrap text at 80 characters |
     
 ### vimdiff Commands
-
-  ]c, [c  - next/previous difference
-  do - diff obtain
-  dp - diff put
-  :diffupdate - update diff if updates look messed up
+|             |                                        |
+| -           | -                                      |
+| ]c, [c      | next/previous difference               |
+| do          | diff obtain                            |
+| dp          | diff put                               |
+| :diffupdate | update diff if updates looks messed up |
  
+### _Word Search / Modification_
+|        |                                  |
+| -      | -                                |
+| n, N   | repeat next, previous "/" or "?" |
+| gn, gN | select next, previous match      |
     
-###### _Word Search / Modification_
-    n, N - repeat next, previous "/" or "?"
-    gn, gN - select next, previous match
-    
-    Use gn/ gN when CHANGING/DELETING matches
-    Use n / N when NAVIGATING to matches
+### How to edit word repeatedly through file
 
-    How to edit word repeatedly through file
+Use gn / gN when CHANGING/DELETING matches <br>
+Use n / N when NAVIGATING to matches
     
-      1. /word       - find "word"
-      2. cgnNEW_WORD - change "word" to "NEW_WORD"
-      3. .           - repeat change word
-	
-        Above replaces the following sequence
-	    
-          1. /word
-          2. visually select the word
-          3. cNEW_WORD
-          4. n.  n.  n.  n.
+    1. /word       - find "word"
+    2. cgnNEW_WORD - change "word" to "NEW_WORD"
+    3. .           - repeat change word
+
+      Above replaces the following sequence
     
-    Best option is to use 'terryma/vim-multiple-cursors'
+        1. /word
+        2. visually select the word
+        3. cNEW_WORD
+        4. n.  n.  n.  n.
+  
+  Best option is to use 'terryma/vim-multiple-cursors'
   
 ###### _Text Objects_
-  
     d, c, y -> delete, change, yank (Ex. diw)
   
-    iw, aw -> inner word, a word 
-    iW, aW -> inner WORD, a WORD
-    is, as -> inner sentence, a sentence
-    ip, ap -> inner paragraph, a paragraph
-    
-    ib, ab -> inner '(' ')' block, a '(' ')' block
-    iB, aB -> inner '{' '}' block, a '{' '}' block
+|        |                                      |
+| -      | -                                    |
+| iw, aw | inner word, a word                   |
+| iW, aW | inner WORD, a WORD                   |
+| is, as | inner sentence, a sentence           |
+| ip, ap | inner paragraph, a paragraph         |
+| ib, ab | inner '(' ')' block, a '(' ')' block |
+| iB, aB | inner '{' '}' block, a '{' '}' block |
 
-###### _Navigation_
+### _Navigation_
 
-    Move cursor..
-      H, M, L - Top, Middle, Bottom of Screen 
-      5k - up 5 rows
-      5j - down 5 rows
+| Move cursor.. |                               |
+| -             | -                             |
+| H, M, L       | Top, Middle, Bottom of Screen |
+| 5k            | up 5 rows                     |
+| 5j            | down 5 rows                   |
       
-    Scroll current Line to..
-      zt,zz,zb - top, middle, bottom of window
+
+| Scroll current Line to.. |                               |
+| -                        | -                             |
+| zt,zz,zb                 | top, middle, bottom of window |
     
-    Move screen.. 
-      <C-y> - up one line
-      <C-e> - down one line
+| Move screen.. |               |
+| -             | -             |
+| <C-y&gt;      | up one line   |
+| <C-e&gt;      | down one line |
       
-    Move cursor and screen.. 
-      <C-u> - up 1/2 page
-      <C-d> - down 1/2 page
+| Move cursor and screen.. |               |
+| -                        | -             |
+| <C-u&gt;                 | up 1/2 page   |
+| <C-d&gt;                 | down 1/2 page |
     
-    Split Window Navigation
     
-      <C-H> - move to left split window
-      <C-J> - move to lower split window
-      <C-K> - move to above split window
-      <C-L> - move to right split window
+| Split Window Navigation.. |                            |
+| -                         | -                          |
+| <C-H&gt;                  | move to left split window  |
+| <C-J&gt;                  | move to lower split window |
+| <C-K&gt;                  | move to above split window |
+| <C-L&gt;                  | move to right split window |
     
-    Go Through Jump Locations 
-      <C-o>, <C-i>
+     
+| Go Through Jump Locations.. |   |
+| -                           | - |
+| <C-o&gt; <C-i&gt;          |   |
       
 ###### _Quickfix and Location Windows_
     (Using unimpaired.vim)
@@ -185,12 +197,14 @@ https://github.com/terryma/vim-multiple-cursors/wiki/Keystrokes-for-example-gifs
     <leader>k{char} - Line motion - highlight lines above
     
 ##### _junegunn/fzf.vim (fuzzy finder)_
-    ; - :Buffers 
-    <leader><space> - :Files
-    <leader>/ - search with 'Ag'
-    :Commits - git commits
-    :BCommits - git commits for current buffer
-    :Ag - loads all files and file contents for searching
+  |                 |                                                 |
+  | -               | -                                               |
+  | ;               | :Buffers                                        |
+  | <leader&gt;<space&gt; | :Files                                          |
+  | <leader&gt;/       | search with 'Ag'                                |
+  | :Commits        | git commits                                     |
+  | :BCommits       | git commits for current buffer                  |
+  | :Ag             | loads all files and file contents for searching |
     
     start search with ' to find exact match, not fuzzy find
 
@@ -252,289 +266,160 @@ Also uses ultisnips http://www.alexeyshmalko.com/2014/youcompleteme-ultimate-aut
     
     got this working and allow <C-S-e> to run script in vim 
 
-##### _fatih/vim-go_
+## _fatih/vim-go_
 https://www.diycode.cc/projects/fatih/vim-go
-###### _Shortcuts_
+#### _Shortcuts_
 
-    # quickfix navigations
-      [q, ]q  for :cnext, cprevious (mappings from unimpaired.vim)
-    
-    # function navigation
-      ]], [[ - jump to next, previous function or method (can be used with d, v prefixes)
-      
-    # Go to Definition 
-      gd -> :GoDef jump to definition, locally or globally
-      <C-t> -> jump back to previous location
-      
-      \ds - <Plug>(go-def-split)
-      \dv - <Plug>(go-def-vertical)
-
-    # Go Doc
-      K, \gd - Get documentation for function under cursor (:GoDoc)
-      \gv - <Plug>(go-doc-vertical)
-
-    # Go Implements - interfaces
-      \s - <Plug>(go-implements) Show a list of interfaces implemented by the type under your cursor
-    
-    # Go Rename - refactoring
-      \e - <Plug>(go-rename) - Rename the identifier under the cursor to a new name
-    
-    # Commands
-      \b - :GoBuild
-      \r - :GoRun  -  go run on whole package
-      \R - :GoRun %  - go run on current file (map added to .vimrc)
-      \t - :GoTest
-      \c - :GoCoverageToggle
-    
-      :A, :AV, :AS - :GoAlternate - alternate between <file>.go and <file>_test.go 
-    
-    # Go Declarations
-      <C-g> :GoDecls
-      \dr :GoDeclsDir
-    
-    # Text Objects
-      dif, cif, vif, yif - detete, change, visual select, yank 'INNER FUNCTION'
-      daf, caf, vaf, yaf - detete, change, visual select, yank 'A FUNCTION'
-      
-    # Struct Split and Join
-      gS - Split struct expression into multiple lines
-      gJ - Join struct expression into single line
+  |                                | Shortcut           | Command            | Description                                                                                        |
+  | -                              | -                  |                    |                                                                                                    |
+  | **quckfix navigations**        | [q, &nbsp; ]q      | :cnext, :cprevious | (mappings from unimpaired.vim)                                                                     |
+  | **function navigation**        | ]], &nbsp;  [[     |                    | jump to next, previous function or method (can be used with d, v prefixes)                         |
+  | **Go to Definition**           | gd                 | :GoDef             | jump to definition, locally or globally                                                            |
+  |                                | <C-t&gt;           |                    | jump back to previous location                                                                     |
+  |                                | \ds                | (go-def-split)     |                                                                                                    |
+  |                                | \dv                | (go-def-vertical)  |                                                                                                    |
+  | **Go Doc**                     | K, \gd             | :GoDoc             | Get documentation for function under cursor                                                        |
+  |                                | \gv                | (go-doc-vertical)  |                                                                                                    |
+  | **Go Implements (interfaces)** | \s                 | (go-implements)    | Show a list of interfaces implemented by the type under your cursor                                |
+  | **Go Rename (refactoring)**    | \e                 | (go-rename)        | Rename the identifier under the cursor to a new name                                               |
+  | **Commands**                   | \b                 | :GoBuild           |                                                                                                    |
+  |                                | \r                 | :GoRun             | go run on whole package                                                                            |
+  |                                | \R                 | :GoRun %           | go run on current file (map added to .vimrc)                                                       |
+  |                                | \t                 | :GoTest            | run go test on file                                                                                |
+  |                                | \c                 | :GoCoverageToggle  | toggle between GoCoverage and GoCoverageToggle                                                     |
+  |                                | :A, :AV, :AS       | :GoAlternate       | alternate between <file>.go and <file>_test.go                                                     |
+  | **Go Declarations**            | <C-g&gt;           | :GoDecls           | opens the current file and lists all available function declarations                               |
+  |                                | \dr                | :GoDeclsDir        | is the same as :GoDecls, the only difference is it parses all Go files under the current directory |
+  | **Text Objects**               | dif, cif, vif, yif |                    | detete, change, visual select, yank 'INNER FUNCTION'                                               |
+  |                                | daf, caf, vaf, yaf |                    | detete, change, visual select, yank 'A FUNCTION'                                                   |
+  | **Struct Split**               | gS                 |                    | Split struct expression into multiple lines                                                        |
+  | **Struct Join**                | gJ                 |                    | Join struct expression into single line                                                            |
   
-    
-###### _Snippets_
-    
-    # print
-      fn -> fmt.Println()
-      ff -> fmt.Printf()   // dynamically copys the variable name into the format string
-      ln -> log.Println()
-      lf -> log.Printf()   // dynamically copys the variable name into the format string
-    
-    # variables
-      :    ->  (shorthand variable declaration)      ->   v:= value
-      var  ->  (variable declaration)
-      vars ->  (variables declaration)
-    
-    # for
-      for  ->  (for loop)
-      
-      fori ->  (for integer loop)  ->  for i := 0; i < N; i++ {
-                                       }
-                                       
-      forr ->  (for range loop)  ->  for k, v := range  {
-                                     }
-    
-    # if, else
-      if   
-      ife  ->  (if with inline err)
-      else, el  
-      
-    # field tags
-      json  ->  (add json field tag)
-      yaml  ->  (add yaml field tag)
-    
-    # interfaces
-      in -> (interface)  ->  interface{}
-      
-      inf -> (full interface)  ->  interface name { 
-                                        /* methods */ 
-                                   }
-                                   
-      interface -> (interface I)  ->  type Interface interface {
-                                        /* TODO: add methods */
-                                      }
-                
-    # function
-      fun  -> (function)  ->  func funcName() error {
-                              }
-                              
-      fum  -> (method)  ->  func (receiver type) funcName() error {
-                            }
-                            
-      func ->             ->  func name(params) {
-                              }
-                              
-      fumh -> (http handler function on receiver)
-                                   ->  func (receiver type) funcName(w http.ResponseWriter, r *http.Request) {
-                                       }
-                                       
-      funch -> (HTTP handler)  ->  func handler(w http.ResponseWriter, r *http.Request) {
-                                   }
-      
-    # function as method
-        meth -> (method)  ->  func (receiver type) name(params) {
-                              }
-    
-    # anonymous function 
-      anon -> (anonymous function)  ->  fn := func() {
-                                        }
-    
-    # Errors
-    
-      err  ->  (Basic error handling)  ->  if err != nil {
-                                             log.Fatal(err)
-                                           }
-    
-      errn  ->  (Error return)  ->  if err != nil {
-                                      return err
-                                    }
-                                          
-      errn, -> (Error multiple return)  ->  if err != nil {
-                                               return nil, err
-                                            }
-    
-      errp -> (Error panic)  -> if err != nil {
-                                  panic()
-                                }
-                                             
-                                             
-      errt -> (Error test fatal)  -> if err != nil {
-                                       t.Fatal(err)
-                                     }
+#### _Snippets_
+  |                        |           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |                                                            |
+  | -                      | -         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |                                                            |
+  | **print**              | fn        | `fmt.Println()`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |                                                            |
+  |                        | ff        | `fmt.Printf()`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | dynamically copys the variable name into the format string |
+  |                        | ln        | `log.Println()`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |                                                            |
+  |                        | lf        | `log.Printf()`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | dynamically copys the variable name into the format string |
+  | **variables**          | :         | `v := value`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | (shorthand variable declaration)                           |
+  |                        | var       |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | (variable declaration)                                     |
+  |                        | vars      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | (variables declaration)                                    |
+  | **for**                | for       |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | (for loop)                                                 |
+  |                        | fori      | `for i := 0; i < N; i++ { }`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | (for integer loop)                                         |
+  |                        | forr      | `for k, v := range  { }`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | (for range loop)                                           |
+  | **if, else**           | if, ife   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | (if with inline err)                                       |
+  |                        | else, el  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |                                                            |
+  | **field tags**         | json      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | (add json field tag)                                       |
+  |                        | yaml      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | (add yaml field tag)                                       |
+  | **interfaces**         | in        | `interface{}`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | (interface)                                                |
+  |                        | inf       | `interface name { /* methods */ }`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | (full interface)                                           |
+  |                        | interface | `type Interface interface { /* TODO: add methods */ }`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | (interface I)                                              |
+  | **function**           | fun       | `func funcName() error { }`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | (function)                                                 |
+  |                        | fum       | `func (receiver type) funcName() error { }`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | (method)                                                   |
+  |                        | func      | `func name(params) { }`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |                                                            |
+  |                        | fumh      | `func (receiver type) funcName(w http.ResponseWriter, r *http.Request) { }`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | (http handler function on receiver)                        |
+  |                        | funch     | `func handler(w http.ResponseWriter, r *http.Request) { }`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | (HTTP handler)                                             |
+  | **function as method** | meth      | `func (receiver type) name(params) { }`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | (method)                                                   |
+  | **anonymous function** | anon      | `fn := func() { }`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | (anonymous function)                                       |
+  | **Errors**             | err       | `if err != nil { log.Fatal(err) }`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | (Basic error handling)                                     |
+  |                        | errn      | `if err != nil { return err }`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | (Error return)                                             |
+  |                        | errn,     | `if err != nil { return nil, err }`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | (Error multiple return)                                    |
+  |                        | errp      | `if err != nil { panic() }`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | (Error panic)                                              |
+  |                        | errt      | `if err != nil { t.Fatal(err) }`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | (Error test fatal)                                         |
+  | **maps**               | make      | `make([]string, 0)`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |                                                            |
+  |                        | map       | `map[string]int`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | (map[Type]Type)                                            |
+  | **single words**       | rt        | `return`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |                                                            |
+  |                        | br        | `break`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |                                                            |
+  |                        | ft        | `fallthrough`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |                                                            |
+  |                        | cn        | `continue`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |                                                            |
+  | **Slices**             | ap        | `append(slice, value)`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | (append)                                                   |
+  |                        | ap=       | `slice = append(slice, value`)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | (append assignment)                                        |
+  | **Struct**             | struct    | `type Struct struct { }`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | (struct)                                                   |
+  | **go routines**        | go        | `go funcName()`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | (goroutine named function)                                 |
+  |                        | gof       | `go func() { }()`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | (goroutine anonymous function)                             |
+  | **channels**           | ch        | `chan type`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |                                                            |
+  |                        | select    | `select { case v1 := <-chan1 }`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | select channel                                             |
+  | **switch**             | sw        | `switch var {` <br>&nbsp;&nbsp;`case value1: ` <br>&nbsp;&nbsp;`case value2: ` <br>&nbsp;&nbsp;`default:`<br>` }`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |                                                            |
+  |                        | switch    | `switch var { case value1: }`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |                                                            |
+  | **Testing**            | test      | `func TestFunction(t *testing.T) { }`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | (test function)                                            |
+  |                        | tt        | `var tests = []struct {` <br>`&nbsp;&nbsp;name string`<br> `&nbsp;&nbsp;expected string`<br> `&nbsp;&nbsp;given string`<br>` }&nbsp;{ `<br>`&nbsp;{"", "", "",}, `<br>`} `<br>`for _, tt := range tests { `<br>`&nbsp;&nbsp;tt := tt `<br>`&nbsp;&nbsp;t.Run(tt.name, func(t *testing.T){`<br>`&nbsp;&nbsp;&nbsp;&nbsp; actual := (tt.given)`<br> `&nbsp;&nbsp;&nbsp;&nbsp; if actual != tt.expected { `<br>`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t.Errorf("(%s): expected %s, actual %s", tt.given, tt.expected, actual)`<br>`&nbsp;&nbsp;&nbsp;&nbsp; }`<br>`&nbsp;&nbsp; })`<br>` }` | (test table)                                               | 
 
-    # maps
-      make  ->                    ->  make([]string, 0)
-      map   ->   (map[Type]Type)  ->  map[string]int
+#### _Move Between Functions (Uses Ctrl-P)_
+    
+  |             |                                                                                                    |
+  | -           | -                                                                                                  |
+  | :GoDecls    | opens the current file and lists all available function declarations                               |
+  | :GoDeclsDir | is the same as :GoDecls, the only difference is it parses all Go files under the current directory |
 
-    # single words
-      rt  ->  return
-      br  ->  break
-      ft  ->  fallthrough
-      cn  ->  continue
-    
-    # Slices
-      ap    -> (append)             ->  append(slice, value)
-      ap=   -> (append assignment)  ->  slice = append(slice, value)
-
-
-    # Struct
-      struct -> (struct)  ->  type Struct struct {
-                              }
-                                    
-    # go routines
-      go    -> (goroutine named function)      ->  go funcName()
-      
-      gof   -> (goroutine anonymous function)  ->  go func() {
-                                                   }()
-    
-    # channels
-      ch  -> chan type 
-    
-      select  ->  select channel  ->  select {
-                                      case v1 := <-chan1
-                                      }
-                                             
-    # switch
-      sw  ->  switch var {
-              case value1:
-                
-              case value2:
-                
-              default:
-                
-              }
-      
-      switch ->  switch var {
-                 case value1:
-                 
-                 }
-    
-    # Testing
-      test  ->  (test function)  ->  func TestFunction(t *testing.T) {
-                                     }
-                                      
-      tt  ->  (test table)  ->  var tests = []struct {
-                                  name string
-                                  expected string
-                                  given string
-                                }{
-                                  {"", "", "",},
-                                }
-                                for _, tt := range tests {
-                                  tt := tt
-                                  t.Run(tt.name, func(t *testing.T){
-                                    actual := (tt.given)
-                                    if actual != tt.expected {
-                                        t.Errorf("(%s): expected %s, actual %s", tt.given, tt.expected, actual)
-                                    }
-
-                                  })
-                                }
-    
-###### _Move Between Functions (Uses Ctrl-P)_
-    
-    :GoDecls opens the current file and lists all available function declarations
-    :GoDeclsDir is the same as :GoDecls, the only difference is it parses all Go files under the current directory
-
-###### _Guru (editor tool for navigating and understanding Go code)_
+#### _Guru (editor tool for navigating and understanding Go code)_
         
-    :GoReferrers -> find references to the selected identifier, scanning all
-                    packages in the workspace. Result is location list
-    :GoDescribe -> Like :GoInfo, but give more info 
-                   show methdod set of a type, declarations of a package
-    :GoImplements -> find the interface a type implements (shows location list)
-  
-    :GoCallers 
-        Show "callees" relation for a selected package. A list of possible call
-        targets for the type under the cursor (or selected package) is shown in a
-        location list.
-    :GoCallers
-        Show "callers" relation for a selected function. A list of possible
-        callers for the selected function under the cursor is shown in a location
-        list.
+  |               |                                                                                                                                                                  |
+  | -             | -                                                                                                                                                                |
+  | :GoReferrers  | find references to the selected identifier, scanning all packages in the workspace. Result is location list                                                      |
+  | :GoDescribe   | Like :GoInfo, but give more info show methdod set of a type, declarations of a package                                                                           |
+  | :GoImplements | find the interface a type implements (shows location list)                                                                                                       |
+  | :GoCallers    | Show "callees" relation for a selected package. A list of possible call targets for the type under the cursor (or selected package) is shown in a location list. |
+  | :GoCallers    | Show "callers" relation for a selected function. A list of possible callers for the selected function under the cursor is shown in a location list.              |
       
-###### _Refactor It_
+#### _Refactor It_
     
-    :GoRename -> search all packages under GOPATH and renames all identifiers
-                 that depend on the identifier
-    :GoFreevars (visual select code) -> result is quickfix list of all
-        variables that are free variables  
-        - used to determine complexity of a piece of code.  See how many
-          variables depend on this code
+  |                                  |                                                                                                                                                                      |
+  | -                                | -                                                                                                                                                                    |
+  | :GoRename                        | search all packages under GOPATH and renames all identifiers that depend on the identifier                                                                           |
+  | :GoFreevars <br>(visual select code) | result is quickfix list of all variables that are free variables  <br> used to determine complexity of a piece of code.  See how many variables depend on this code |
       
-###### _Delve Debugger_
-    
-    :GoDebugStart [pkg] [program-args]  (Ex :GoDebugStart ./hello)
-    :GoDebugStop  -> close all windows after stop
-    :GoDebugRestart  -> recompile code
-    :GoDebugTest [pkg] [program-args]  (same as :GoDebugStart, but debugs *_test.go file)
-        Use `-test.flag` to pass flags to `go test` when debugging a test; for
-        example `-test.v` or `-test.run TestFoo` (:GoDebugTest ./app -test.run TestStartServerSuccess)
-    :GoDebugPrint {expr} (Ex. :GoDebugPrint truth == 42)
-    :GoDebugStepOut - Run all code in the current function and halt ("step out")
-    :GoDebugSet {var} {value} -> set the variable to value. 
-                                 Cannot be string. limitation of delve
-    
-    <F5> - next breakpoint (:GoDebugContinue)
-    <F6> - evaluate the <cword> under the cursor (:GoDebugPrint) 
-    <F9> - add breakpoint (:GoDebugBreakpoint)
-    <F10> - next line (:GoDebugNext) Will literally go to the line with active cursor in file!
-    <F11> - step into (:GoDebugStep)
-    <S-F11> - step out (:GoDebugStepOut)  Mapped in .vimrc
+#### _Delve Debugger_
+
+  |        **Commands**                            |                                                                                                                                                                                                                                   |
+  | -                                  | -                                                                                                                                                                                                                                 |
+  | :GoDebugStart [pkg] [program-args] | (Ex :GoDebugStart ./hello)                                                                                                                                                                                                        |
+  | :GoDebugStop                       | close all windows after stop                                                                                                                                                                                                      |
+  | :GoDebugRestart                    | recompile code                                                                                                                                                                                                                    |
+  | :GoDebugTest [pkg] [program-args]  | (same as :GoDebugStart, but debugs *_test.go file) <br> Use `-test.flag` to pass flags to `go test` when debugging a test; <br>for example `-test.v` or `-test.run TestFoo` (:GoDebugTest ./app -test.run TestStartServerSuccess) |
+  | :GoDebugPrint {expr}               | (Ex. :GoDebugPrint truth == 42)                                                                                                                                                                                                   |
+  | :GoDebugStepOut                    | Run all code in the current function and halt ("step out")                                                                                                                                                                        |
+  | :GoDebugSet {var} {value}          | set the variable to value.  Cannot be string. limitation of delve                                                                                                                                                                 |
+
+  |   **Mappings**                                   |                                                                                                                                                                                                                                   |
+  | -                                  | -                                                                                                                                                                                                                                 |
+  | <F5&gt;                               | next breakpoint (:GoDebugContinue)                                                                                                                                                                                                |
+  | <F6&gt;                               | evaluate the <cword> under the cursor (:GoDebugPrint)                                                                                                                                                                             |
+  | <F9&gt;                               | add breakpoint (:GoDebugBreakpoint)                                                                                                                                                                                               |
+  | <F10&gt;                              | next line (:GoDebugNext) Will literally go to the line with active cursor in file!                                                                                                                                                |
+  | <F11&gt;                              | step into (:GoDebugStep)                                                                                                                                                                                                          |
+  | <S-F11&gt;                            | step out (:GoDebugStepOut)  Mapped in .vimrc                                                                                                                                                                                      |
       
-###### _GODEBUG_OUTPUT Window_
+#### _GODEBUG_OUTPUT Window_
 
     Struct values displayed as {...}
     array/slices as [4] -> <CR> on the variable name to expand values
       
-###### _Go Test_
+#### _Go Test_
     
-    :GoTest - run go test on file 
-    :GoTestFunc - test only function under cursor
-    :GoTestCompile - test compile without problems
+  |                |                                 |
+  | -              | -                               |
+  | :GoTest        | run go test on file             |
+  | :GoTestFunc    | test only function under cursor |
+  | :GoTestCompile | test compile without problems   |
       
-###### _Go Coverage_
+#### _Go Coverage_
     
-    :GoCoverage - `go test -coverprofile tempfile`
-    :GoCoverageClear - clear coverage
-    :GoCoverageToggle - toggle between GoCoverage and GoCoverageToggle
+  |                   |                                                |
+  | -                 | -                                              |
+  | :GoCoverage       | `go test -coverprofile tempfile`               |
+  | :GoCoverageClear  | clear coverage                                 |
+  | :GoCoverageToggle | toggle between GoCoverage and GoCoverageToggle |
       
-###### _Go Imports_
+#### _Go Imports_
     
-    :GoImport <package> - add package to import statement (supports tab completion)
-    :GoImportAs <name> <package> - add package with package name (ex. str strings)
-    :GoDrop <package> - remove package from imports 
+  |                              |                                                           |
+  | -                            | -                                                         |
+  | :GoImport <package>          | add package to import statement (supports tab completion) |
+  | :GoImportAs <name> <package> | add package with package name (ex. str strings)           |
+  | :GoDrop <package>            | remove package from imports
     
-###### _vim-go Tutorial_
+### _vim-go Tutorial_
 https://github.com/fatih/vim-go-tutorial
     
     :GoRun %  - go run on current file
