@@ -271,7 +271,7 @@ https://www.diycode.cc/projects/fatih/vim-go
 #### _Shortcuts_
 
   |                                | Shortcut           | Command            | Description                                                                                        |
-  | -                              | -                  |                    |                                                                                                    |
+  | -                              | -                  |                -   |  -                                                                                                 |
   | **quckfix navigations**        | [q, &nbsp; ]q      | :cnext, :cprevious | (mappings from unimpaired.vim)                                                                     |
   | **function navigation**        | ]], &nbsp;  [[     |                    | jump to next, previous function or method (can be used with d, v prefixes)                         |
   | **Go to Definition**           | gd                 | :GoDef             | jump to definition, locally or globally                                                            |
