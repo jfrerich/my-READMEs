@@ -174,6 +174,11 @@ https://github.com/terryma/vim-multiple-cursors/wiki/Keystrokes-for-example-gifs
     :Gpull
     :Gpush
     :Gstatus
+    :Gwrite
+    
+MAPPINGS - These mappings are available in the :Gstatus buffere and the
+Fugitive oject bufferes
+
       g? 	show this help
       <C-N> next file
       <C-P> previous file
@@ -188,7 +193,7 @@ https://github.com/terryma/vim-multiple-cursors/wiki/Keystrokes-for-example-gifs
       q     close status
       r     reload status
       P     patch 
-    :Gwrite
+      gq    Close the status buffer.
 
 ##### _easymotion/vim-easymotion_
     <leader> is '\' key
@@ -197,14 +202,15 @@ https://github.com/terryma/vim-multiple-cursors/wiki/Keystrokes-for-example-gifs
     <leader>k{char} - Line motion - highlight lines above
     
 ##### _junegunn/fzf.vim (fuzzy finder)_
-  |                 |                                                 |
-  | -               | -                                               |
-  | ;               | :Buffers                                        |
+  |                       |                                                 |
+  | -                     | -                                               |
+  | ;                     | :Buffers                                        |
+  | <leader&gt;ag         | search for file under cursor in files           |
   | <leader&gt;<space&gt; | :Files                                          |
-  | <leader&gt;/       | search with 'Ag'                                |
-  | :Commits        | git commits                                     |
-  | :BCommits       | git commits for current buffer                  |
-  | :Ag             | loads all files and file contents for searching |
+  | <leader&gt;/          | search with 'Ag'                                |
+  | :Commits              | git commits                                     |
+  | :BCommits             | git commits for current buffer                  |
+  | :Ag                   | loads all files and file contents for searching |
     
     start search with ' to find exact match, not fuzzy find
 
