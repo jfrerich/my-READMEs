@@ -1,5 +1,18 @@
 # MY VIM CHEATSHEET
 
+##### _junegunn/fzf.vim (fuzzy finder)_
+  | Mapping               | Description                                     |
+  | -                     | -                                               |
+  | ;                     | :Buffers                                        |
+  | <leader&gt;ag         | search for file under cursor in files           |
+  | <leader&gt;<space&gt; | :Files                                          |
+  | <leader&gt;/          | search with 'Ag'                                |
+  | :Commits              | git commits                                     |
+  | :BCommits             | git commits for current buffer                  |
+  | :Ag                   | loads all files and file contents for searching |
+    
+    start search with ' to find exact match, not fuzzy find
+
 ### Windows
 |         |                      |
 | -       | -                    |
@@ -201,19 +214,6 @@ Fugitive oject bufferes
     <leader>j{char} - Line motion - highlight lines below
     <leader>k{char} - Line motion - highlight lines above
     
-##### _junegunn/fzf.vim (fuzzy finder)_
-  |                       |                                                 |
-  | -                     | -                                               |
-  | ;                     | :Buffers                                        |
-  | <leader&gt;ag         | search for file under cursor in files           |
-  | <leader&gt;<space&gt; | :Files                                          |
-  | <leader&gt;/          | search with 'Ag'                                |
-  | :Commits              | git commits                                     |
-  | :BCommits             | git commits for current buffer                  |
-  | :Ag                   | loads all files and file contents for searching |
-    
-    start search with ' to find exact match, not fuzzy find
-
 ##### _kien/ctrlp.vim (fuzzy finder)_
   Find anything from VIM http://www.youtube.com/watch?v=9XrHk3xjYsw
 
