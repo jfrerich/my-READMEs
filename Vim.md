@@ -10,6 +10,11 @@
   | :Commits              | git commits                                     |
   | :BCommits             | git commits for current buffer                  |
   | :Ag                   | loads all files and file contents for searching |
+  | :History:             | Command history                                 |
+  | :History/             | Search history                                  |
+  | :Windows              | list of open windows in vim                     |
+  | :Commands             | : Commands                                      |
+  | :Maps                 | key mappings                                    |
     
     start search with ' to find exact match, not fuzzy find
 
@@ -69,39 +74,21 @@ Use n / N when NAVIGATING to matches
 
 ### _Navigation_
 
-| Move cursor.. |                               |
-| -             | -                             |
-| H, M, L       | Top, Middle, Bottom of Screen |
-| 5k            | up 5 rows                     |
-| 5j            | down 5 rows                   |
-      
-
-| Scroll current Line to.. |                               |
-| -                        | -                             |
-| zt,zz,zb                 | top, middle, bottom of window |
-    
-| Move screen.. |               |
-| -             | -             |
-| <C-y&gt;      | up one line   |
-| <C-e&gt;      | down one line |
-      
-| Move cursor and screen.. |               |
-| -                        | -             |
-| <C-u&gt;                 | up 1/2 page   |
-| <C-d&gt;                 | down 1/2 page |
-    
-    
-| Split Window Navigation.. |                            |
-| -                         | -                          |
-| <C-H&gt;                  | move to left split window  |
-| <C-J&gt;                  | move to lower split window |
-| <C-K&gt;                  | move to above split window |
-| <C-L&gt;                  | move to right split window |
-    
-     
-| Go Through Jump Locations.. |   |
-| -                           | - |
-| <C-o&gt; <C-i&gt;          |   |
+|                                 |                   |                               |   
+| -                               | -                 | -                             |   
+| **Move cursor..**               | H, M, L           | Top, Middle, Bottom of Screen |   
+|                                 | 5k                | up 5 rows                     |   
+|                                 | 5j                | down 5 rows                   |   
+| **Scroll current Line to..**    | zt,zz,zb          | top, middle, bottom of window |   
+| **Move screen..**               | <C-y&gt;          | up one line                   |   
+|                                 | <C-e&gt;          | down one line                 |   
+| **Move cursor and screen..**    | <C-u&gt;          | up 1/2 page                   |   
+|                                 | <C-d&gt;          | down 1/2 page                 |   
+| **Split Window Navigation..**   | <C-H&gt;          | move to left split window     |   
+|                                 | <C-J&gt;          | move to lower split window    |   
+|                                 | <C-K&gt;          | move to above split window    |   
+|                                 | <C-L&gt;          | move to right split window    |   
+| **Go Through Jump Locations..** | <C-o&gt; <C-i&gt; |                               |   
       
 ###### _Quickfix and Location Windows_
     (Using unimpaired.vim)
@@ -274,7 +261,7 @@ Also uses ultisnips http://www.alexeyshmalko.com/2014/youcompleteme-ultimate-aut
 
 ## _fatih/vim-go_
 https://www.diycode.cc/projects/fatih/vim-go
-#### _Shortcuts_
+#### _Mappings_
 
   |                                | Shortcut           | Command            | Description                                                                                        |
   | -                              | -                  |                -   |  -                                                                                                 |
