@@ -1,5 +1,7 @@
 # MY VIM CHEATSHEET
 
+<c-g> brings up ctrl-P declaration.  check how and use fzf?
+
 ##### _junegunn/fzf.vim (fuzzy finder)_
   | Mapping               | Description                                     |
   | -                     | -                                               |
@@ -196,6 +198,7 @@ Fugitive oject bufferes
       gq    Close the status buffer.
 
 ##### _easymotion/vim-easymotion_
+    s{char} - search {char} in file
     <leader> is '\' key
     <leader>s{char} - highlight {char} in file
     <leader>j{char} - Line motion - highlight lines below
