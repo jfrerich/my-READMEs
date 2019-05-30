@@ -42,9 +42,27 @@ bindkeys setup in .zshrc
 
 | Mapping        | Description                                                                   |
 | -              | -                                                                             |
-| <ctrl-r&gt;    | fzf through command history                                                   |
-| <ctrl-t&gt;    | fzf through current directory                                                 |
-| rm <ctrl-t&gt; | use <ctrl-t&gt; to select files for rm.  Use tab on filenames to select files |
+| <ctrl-r&gt;    | fzf through command HISTORY                                                   |
+| <ctrl-t&gt;    | fzf through current DIRECTORY                                                 |
+
+##### Using fzf window
+| Search terms | Description                              |
+| -            | -                                        |
+| atom         | fuzzy search atom                        |
+| 'atom        | no fuzzy. search exact match             |
+| ^a  .go$     | match ^a and .go$  regex patterns        |
+| !^a  !.go$   | DO NOT match ^a and .go$ regex patterns |
+
+##### Example Completion With FZF
+`COMMAND [DIRECTORY/][FUZZY_PATTERN]**<TAB>` <br> 
+
+ Use tab on filenames to select multiple files
+ 
+| *COMMAND*      | Description                     |
+| -              | -                               |
+| rm <ctrl-t&gt; | use fzf to select files for rm. |
+| kill -9 <tab>  | use fzf to select PID to kill.  |
+
 
 ### git
     
@@ -59,6 +77,7 @@ bindkeys setup in .zshrc
 | gcount  | 'git shortlog -sn'                                                                                             |
 | glod    | 'git log --graph --pretty='\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset'\' |
 | gb      | 'git branch'                                                                                                   |
+| fbr     | fzf 'git branch' -> allows selecting instead of having to type                                                 |
 | gcb     | 'git checkout -b'                                                                                              |
 | gcm     | 'git checkout master'                                                                                          |
   
