@@ -40,10 +40,10 @@ bindkeys setup in .zshrc
 
 ### fzf
 
-| Mapping        | Description                                                                   |
-| -              | -                                                                             |
-| <ctrl-r&gt;    | fzf through command HISTORY                                                   |
-| <ctrl-t&gt;    | fzf through current DIRECTORY                                                 |
+|   Mapping   |          Description          |
+| ----------- | ----------------------------- |
+| <ctrl-r&gt; | fzf through command HISTORY   |
+| <ctrl-t&gt; | fzf through current DIRECTORY |
 
 ##### Using fzf window
 | Search terms | Description                              |

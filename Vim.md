@@ -178,24 +178,38 @@ https://github.com/terryma/vim-multiple-cursors/wiki/Keystrokes-for-example-gifs
     :Gstatus
     :Gwrite
     
-MAPPINGS - These mappings are available in the :Gstatus buffere and the
-Fugitive oject bufferes
+MAPPINGS - These mappings are available in the :Gstatus buffer and the
+Fugitive object buffers
 
       g? 	show this help
-      <C-N> next file
-      <C-P> previous file
-      <CR>  |:Gedit|
-      -     |:Git| add
-      -     |:Git| reset (staged files)
+      
+  Staging and resetting mappings
+      s - Stage (add) the file or hunk under the cursor
+      u - Unstage (reset) the file or hunk under the cursor
+      
+      <C-N> skip to next file or hunk
+      <C-P> skip to previous file or hunk
+      
+      <CR>  |:Gedit| edit file under cursor
+      =     Toggle inline diff of file under cursor
+      
+      D, dd |:Gdiff|
+      ds    |:Gsdiff| horizontal split
+      dv    |:Gvdiff| vertical split
+      
       a     Show alternative format
-      cc    |:Gcommit|
-      D     |:Gdiff|
-      ds    |:Gsdiff|
       dp    |:Git| add --intent-to-add (untracked files)
       q     close status
-      r     reload status
       P     patch 
+      
+  Commit Mappings 
+      cc    |:Gcommit|  Create a commit
+      ca    Amend the last commit and edit the message 
+      ce    Amend the last commit without editing the message 
+      
+  Miscellaneous mappings
       gq    Close the status buffer.
+      R     Reload the status buffer
 
 ##### _easymotion/vim-easymotion_
     s{char} - search {char} in file
