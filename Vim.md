@@ -97,6 +97,9 @@ Use n / N when NAVIGATING to matches
     
       [q, ]q - :cnext, cprevious (mappings from unimpaired.vim)
       <leader>a :cclose -> close quickfix window
+      :lopen -> openlocation window
+      :lclose -> close location window
+      
       
       Location List Navigation 
         [l, ]l - prev, next location list item
