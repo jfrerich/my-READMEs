@@ -200,6 +200,8 @@ Fugitive object buffers
       s - Stage (add) the file or hunk under the cursor
       u - Unstage (reset) the file or hunk under the cursor
 
+      X - discard change under cursor
+
       <C-N> skip to next file or hunk
       <C-P> skip to previous file or hunk
       
