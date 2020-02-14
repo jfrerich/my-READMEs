@@ -9,6 +9,21 @@
 | zsh-autosuggestions          | auto suggestions on commandline                                     |
 | zsh-syntax-highlighting      | highlight command line                                              |
 | zsh-history-substring-search | type substring; <esc>; then j/k to traverse through history         |
+
+### INSTALLED CLIs
+| CLI         | Link / Description                      | installation | other                                 |   |
+| -           | -                                       | -            | -                                     |   |
+| mycli       | autocompleteion / syntax highlighting   | brew         |                                       |   |
+| hub         | git working with github                 | brew         |                                       |   |
+| fx          | json processing tool                    | brew         |                                       |   |
+| tldr        | simplified human readable man pages     | brew         |                                       |   |
+| httpie      | curl alternative                        | pip          |                                       |   |
+| http-prompt | http autocomplete / syntax highlighting | pip          |                                       |   |
+| richgo      | colorize go test output                 | brew         | aliased go to richgo                  |   |
+| fd          | find alternative                        | brew         |                                       |   |
+| howdoi      | termainal coding answers                | brew         |                                       |   |
+| has         | report version of CLI tools in PATH     | brew         | don't need know -v, --version, .ets c |   |
+
      
 bindkeys setup in .zshrc
 
@@ -69,17 +84,19 @@ bindkeys setup in .zshrc
 ##### git most commonly used
 | Command | Description                                                                                                    |
 | -       | -                                                                                                              |
-| gaa     | 'git add --all'                                                                                                |
+| gaa     | `git add --all`                                                                                                |
 | gd      | git diff file(s) and show in terminal                                                                          |
 | gdt     | git difftool file(s) and show in external vimdiff window                                                       |
-| gcmsg   | 'git commit -m'                                                                                                |
-| gco     | 'git checkout'                                                                                                 |
-| gcount  | 'git shortlog -sn'                                                                                             |
-| glod    | 'git log --graph --pretty='\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset'\' |
-| gb      | 'git branch'                                                                                                   |
+| gcmsg   | `git commit -m`                                                                                                |
+| gco     | `git checkout`                                                                                                 |
+| gcount  | `git shortlog -sn`                                                                                             |
+| glod    | `git log --graph --pretty='\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset'\'` |
+| gb      | `git branch`                                                                                                   |
 | fbr     | fzf 'git branch' -> allows selecting instead of having to type                                                 |
-| gcb     | 'git checkout -b'                                                                                              |
-| gcm     | 'git checkout master'                                                                                          |
+| fbrr    | fzf 'git branch' -> allows selecting instead of having to type (including remote branches)                     |
+| gcb     | `git checkout -b`                                                                                              |
+| gpsup   | `git push --set-upstream origin $(git_current_branch)`                                                         |
+| gcm     | `git checkout master`                                                                                          |
   
 
 ##### INSTALLING
